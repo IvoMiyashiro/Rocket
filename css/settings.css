@@ -1,0 +1,56 @@
+/* Colors */
+
+:root {
+    --main-primary: #FF6B32;
+    --main-secondary: #000956;
+    --main-highlight-1: #52B286;
+    --main-highlight-2: #E6696B;
+
+    --dark-grey: #80858A;
+    --medium-grey: #a0a0a0;
+    --light-grey: #f0f0f0;
+
+    --white: #fff;
+    --black: #171717;
+    --green: #31D086;
+}
+
+/* Colors */
+
+/* Fonts Family */
+
+@font-face {
+    font-family: 'Lobster';
+    src: url("../assets/fonts/Lobster/Lobster-Regular.ttf");
+}
+@font-face {
+    font-family: 'Title';
+    src: url("../assets/fonts/Poppins/Poppins-Bold.ttf");
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: 'Title';
+    src: url("../assets/fonts/Poppins/Poppins-SemiBold.ttf");
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'Text';
+    src: url("../assets/fonts/Montserrat/Montserrat-Light.ttf");
+    font-weight: 200;
+}
+
+@font-face {
+    font-family: 'Text';
+    src: url("../assets/fonts/Montserrat/Montserrat-Regular.ttf");
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'Text';
+    src: url("../assets/fonts/Montserrat/Montserrat-Bold.ttf");
+    font-weight: 600;
+}
+
+/* Fonts Family */
