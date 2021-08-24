@@ -1,0 +1,27 @@
+/* Footer */
+
+.footer-main {
+    background: var( --light-grey );
+    padding: 1em 0;
+}
+
+.footer-container {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+}
+
+.footer-section {
+    display: flex;
+    gap: 1em;
+}
+
+.footer-links {
+    font-family: 'Title';
+    
+}
+
+/* Footer */

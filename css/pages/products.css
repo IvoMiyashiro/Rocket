@@ -1,0 +1,149 @@
+/* Searcher Section */
+
+.searcher-section {
+    width: 100%;
+    background: 
+        linear-gradient(
+            90deg, #8225C5, #F30487
+        );
+    height: 150px;
+}
+
+.searcher-section-container {
+    width: 90%;
+    margin: 0 auto;
+    height: 100%;
+    max-width: 1440px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+}
+
+.searcher-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    width: 80%;
+    max-width: 1200px;
+    padding: 1.25em 0
+}
+
+.searcher-title {
+    color: white;
+}
+
+.searcher-info-section {
+    display: flex;
+}
+
+.searcher-info {
+    font-size: .85rem;
+    margin-top: .25em;
+    color: white;
+}
+
+.sorter-label {
+    font-size: .85rem;
+    color: white;
+}
+
+.sorter-select {
+    border: none;
+    background: transparent;
+    color: white;
+    outline: none;
+    font-weight: 600;
+}
+
+.sorter-select option {
+    color: black;
+}
+
+/* Searcher Section */
+
+/* Products Display Section */
+
+.products-display-section {
+    display: flex;
+    width: 90%;
+    margin: 0 auto;
+    max-width: 1440px;
+    position: relative;
+}
+
+/* Products Display Section */
+
+/* Filter Section */
+
+.products-filters-section {
+    position: absolute;
+    top: -120px;
+    padding: 1em 0;
+}
+
+.searcher-sections {
+    padding: 0em .5em;
+    font-size: .85rem;
+    color: white;
+    max-width: 280px;
+}
+
+.products-filter {
+    border: 1px solid #ccc;
+    background: white;
+    padding: 1em .5em;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    border-radius: 8px;
+    margin-top: 1em;
+    width: 215px;
+}
+
+.products-filter-title {
+    font-size: 1.15rem;
+    margin-bottom: .25em;
+}
+
+.products-filter-input-checkbox {
+    width: 12px ;
+}
+
+.products-filter-label {
+    font-size: .75rem;
+}
+
+.products-filter-stock-section,
+.products-filter-categories,
+.products-filter-colors {
+    display: flex;
+    flex-direction: column;
+    gap: .5em;
+}
+
+.products-filter-category,
+.products-filter-stock,
+.products-filter-color {
+    display: flex;
+    align-items: center;
+}
+
+/* Filter Section */
+
+/* Products Row */
+
+.products-rows {
+    display: flex;
+}
+
+.products-rows-div {
+    width: 280px;
+}
+
+.products-rows-section {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2em;
+}
+
+/* Products Row */

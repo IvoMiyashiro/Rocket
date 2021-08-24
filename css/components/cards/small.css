@@ -1,0 +1,88 @@
+/* Small Card */
+
+.small-product-card {
+    width: 250px;
+    height: 365px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 8px;
+    box-shadow:
+    0 0px 0.4px rgba(0, 0, 0, 0.02),
+    0 0px 1px rgba(0, 0, 0, 0.028),
+    0 0px 1.9px rgba(0, 0, 0, 0.035),
+    0 0px 3.4px rgba(0, 0, 0, 0.042),
+    0 0px 6.3px rgba(0, 0, 0, 0.05),
+    0 0px 15px rgba(0, 0, 0, 0.07);
+    padding: .5em 0;
+    transition: .2s ease-in-out;
+}
+
+.small-product-card:hover {
+    box-shadow:
+    0 0px 0.4px rgba(0, 0, 0, 0.031),
+    0 0px 1px rgba(0, 0, 0, 0.044),
+    0 0px 1.9px rgba(0, 0, 0, 0.055),
+    0 0px 3.4px rgba(0, 0, 0, 0.066),
+    0 0px 6.3px rgba(0, 0, 0, 0.079),
+    0 0px 15px rgba(0, 0, 0, 0.11)
+    ;
+    transition: .2s ease-in-out;
+}
+
+.small-product-section {
+    display: flex;
+    flex-direction: column;
+    padding: .5em;
+}
+
+.small-card-img {
+    height: 175px;
+    object-fit: cover;
+    align-self: center;
+}
+
+.small-card-category {
+    font-size: .75rem;
+    margin-top: 1em;
+    font-weight: 200;
+}
+
+.small-card-title {
+    font-size: 1.05rem;
+    font-family: 'Text';
+    font-weight: 400;
+    
+}
+
+.small-card-price {
+    margin-top: .75em;
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+
+.small-card-info-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .5em;
+    padding: .5em;
+}
+
+.small-card-info {
+    border: 1px solid var( --main-primary );
+    color: var( --main-primary );
+    padding: .25em .5em;
+    font-size: .75rem;
+    display: flex;
+    align-items: center;
+    border-radius: 4px;
+    gap: .5em;
+}
+
+.small-card-icon-check {
+    color: var( --green );
+    width: 16px;
+    color: var( --main-primary );
+}
+
+/* Small Card */

@@ -1,0 +1,80 @@
+/* XL Card */
+
+.extraLarge-product-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 400px;
+    height: 485px;
+    padding: 1em 0;
+    border-radius: 8px;
+    box-shadow:
+    0 0px 0.4px rgba(0, 0, 0, 0.02),
+    0 0px 1px rgba(0, 0, 0, 0.028),
+    0 0px 1.9px rgba(0, 0, 0, 0.035),
+    0 0px 3.4px rgba(0, 0, 0, 0.042),
+    0 0px 6.3px rgba(0, 0, 0, 0.05),
+    0 0px 15px rgba(0, 0, 0, 0.07);
+    transition: .2s ease-in-out;
+}
+
+.extraLarge-product-card:hover {
+    box-shadow:
+    0 0px 0.4px rgba(0, 0, 0, 0.031),
+    0 0px 1px rgba(0, 0, 0, 0.044),
+    0 0px 1.9px rgba(0, 0, 0, 0.055),
+    0 0px 3.4px rgba(0, 0, 0, 0.066),
+    0 0px 6.3px rgba(0, 0, 0, 0.079),
+    0 0px 15px rgba(0, 0, 0, 0.11)
+    ;
+    transition: .2s ease-in-out;
+}
+
+.extraLarge-product-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.extraLarge-card-img {
+    height: 275px;
+    align-self: center;
+}
+
+.extraLarge-card-category {
+    font-weight: 200;
+    margin-top: 1.25em;
+    font-size: .85rem;
+}
+
+.extraLarge-card-title {
+    font-family: 'Text';
+    font-weight: 400;
+    font-size: 1.25rem;
+}
+
+.extraLarge-card-price {
+    margin-top: .5em;
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.extraLarge-card-button-section {
+    display: flex;
+    justify-content: center;
+}
+
+.extraLarge-card-button {
+    display: flex;
+    gap: .5em;
+    align-items: center;
+    justify-content: center;
+}
+
+.extraLarge-card-button:hover {
+    background-position: right center;
+    color: #fff;
+    text-decoration: none;
+}
+
+ /* XL Card */

@@ -1,0 +1,144 @@
+.checkout-title-section {
+    background: linear-gradient(
+        90deg, var( --main-third ), #06D6DB
+    );
+    height: 150px;
+    display: flex;
+    align-items: center;
+
+}
+
+.checkout-title {
+    width: 80%;
+    margin: 0 auto;
+    color: white;
+    max-width: 1280px;
+}
+
+.checkout-section {
+    display: flex;
+    position: relative;
+    width: 80%;
+    margin: 0 auto;
+    max-width: 1280px;
+    margin-bottom: 6em;
+}
+
+.checkout-cart {
+    position: absolute;
+    width: 350px;
+    right: 0;
+    background-color: white;
+    border: 1px solid var( --medium-grey );
+    border-radius: 8px;
+    top: -50px;
+}
+
+.checkout-cart-info {
+    margin-top: 1em;
+}
+
+.checkout-info-price {
+    font-size: 1.5rem;
+}
+
+.checkout-price {
+    font-size: 1.5rem;
+}
+
+.checkout-form {
+    margin-top: 2em;
+    display: flex;
+    flex-direction: column;
+    gap: 1.85em;
+    position: relative;
+}
+
+.checkout-form-control {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.checkout-form-section {
+    display: flex;
+    gap: 1em;   
+}
+
+.checkout-form-label {
+    font-size: .85rem;
+    margin-bottom: .25em;
+}
+
+.checkout-form-input {
+    width: 265px;
+    height: 15px;
+    padding: .65em;
+    font-size: 1rem;
+    border-radius: 4px;
+    background-color: var( --light-grey );
+    border: none;
+    outline: none;
+    padding-left: 1em;
+    border: 2px solid transparent;
+}
+
+.checkout-form-error {
+    position: absolute;
+    bottom: -20px;
+    color: red;
+    font-size: .75rem;
+}
+
+.checkout-form-select {
+    width: 295px;
+    height: 40px;
+    border-radius: 4px;
+    border: none;
+    background-color: var( --light-grey );
+    padding-left: 1em;
+    font-size: .95rem;
+}
+
+.checkout-address-input {
+    width: 375px;
+    border: none;
+    border: 2px solid transparent;
+}
+
+.checkout-dpto-input {
+    width: 155px;
+    border: 2px solid transparent;
+}
+
+.checkout-input-error {
+    border: 2px solid red;
+    background-color: #FCEEEC;
+}
+
+.checkout-form-error-box {
+    border: 2px solid red;
+    background-color: #FCEEEC;
+    color: red;
+    border-radius: 4px;
+    padding: .75em;
+    font-size: .95rem;
+    display: none;
+    width: 295px;
+}
+
+.checkout-button {
+    width: 290px;
+    height: 50px;
+    font-size: 1rem;
+    margin-top: 1.5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.checkout-button:disabled:hover {
+    background-color: black;
+    color: white;
+    transition: none;
+}

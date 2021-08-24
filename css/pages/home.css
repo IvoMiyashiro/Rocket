@@ -1,0 +1,179 @@
+/* Last Post Section */
+
+.last-posts-section {
+    margin: 0 auto;
+    max-width: 1440px;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.last-posts-title {
+    margin-bottom: .75em;
+}
+
+.last-posts-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .5em;
+    margin-top: 1em;
+}
+
+/* Last Post Section */
+
+/* Hero */
+
+.hero-section {
+    width: 90%;
+    margin: 5em auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2em;
+    
+}
+
+.hero-title-section {
+    text-align: center;
+}
+
+.hero-title {
+    font-size: 5rem;
+    color: #000;
+}
+
+.hero-button-section {
+    display: flex;
+    gap: 1.5em;
+}
+
+.hero-button {
+    width: 150px;
+    height: 50px;
+    font-size: 1rem;
+}
+
+.hero-text-section {
+    text-align: center;
+    margin-top: 1em;
+    display: flex;
+    flex-direction: column;
+    gap: .5em;
+}
+
+.hero-text {
+    margin: 0;
+}
+
+/* Hero */
+
+/* Best Sellers */
+
+.best-sellers-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+.best-sellers-cards-section {
+    display: flex;
+    gap: 3em;
+}
+
+.best-sellers-small-cards {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 4em;
+}
+
+/* Best Sellers */
+
+/* Categories Section */
+
+.categories-section {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.categories-cards-section {
+    margin-top: 3em;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3.5em;
+}
+
+.category-card {
+    position: relative;
+    border-radius: 4px;
+    background: linear-gradient(
+        90deg, var( --main-third ), #06D6DB
+    );
+    width: 150px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    padding: 0 .5em;
+}
+
+.category-card:hover .category-card-img {
+    top: -60px;
+    transition: .2s ease-in-out;
+}
+
+.category-card-title {
+    font-size: 1.25rem;
+    margin-top: 90px;
+    color: white;
+}
+
+.category-card-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.category-card-button {
+    color: white;
+}
+
+.category-card-img {
+    position: absolute;
+    left: 20px;
+    top: -50px;
+    width: 125px;
+    height: 125px;
+    object-fit: cover;
+    border-radius: 50%;
+    filter: drop-shadow(0 0 0.2rem #ccc);
+    transition: .2s ease-in-out;
+}
+
+.brands-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4em;
+    margin-top: 3em;
+}
+
+.brands-icon {
+    width: 125px;
+}
+
+.apple {
+    width: 40px;
+}
+
+.lg {
+    width: 60px;
+}
