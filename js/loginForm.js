@@ -10,14 +10,18 @@ document.addEventListener('DOMContentLoaded', () => {
         e.preventDefault();
 
         if ( !validEmail.test( emailInput.value ) || emailInput.value === "" || passwordInput.value === "" ) {
-            loginFormError.style.display = 'block';
+            document.querySelector('.login-form-button').innerHTML = `<div class="spinner"></div>`;
+            setTimeout(() => {
+                loginFormError.style.display = 'block';
+                document.querySelector('.login-form-button').innerText = `LOGIN `;
+            }, 2000);
         } else {
             loginFormError.style.display = 'none';
             document.querySelector('.login-form-button').innerHTML = `<div class="spinner"></div>`;
 
-            setTimeout( async() => {
+            setTimeout(() => {
                 loginForm.reset();
-            }, 3000);
+            }, 2000);
         }
     });
 

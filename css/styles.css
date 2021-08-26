@@ -1,5 +1,9 @@
+/* General */
+
 @import "./base/settings.css";
 @import "./base/base.css";
+
+/* General */
 
 /* Components */
 
@@ -19,5 +23,6 @@
 @import "./pages/product.css";
 @import "./pages/checkout.css";
 @import "./pages/login.css";
+@import "./pages/signup.css";
 
 /* Pages */
