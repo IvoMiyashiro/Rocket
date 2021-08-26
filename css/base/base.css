@@ -164,7 +164,7 @@ input:-webkit-autofill:active {
     font-family: 'Title';
  }
 
- .btnGradientOrange:hover {
+ .btnGradientPurple:hover {
    background-position: right center;
    color: #fff;
    text-decoration: none;
@@ -177,8 +177,10 @@ input:-webkit-autofill:active {
 
 .gradient-1 {
     background: #ccc;
-    background: linear-gradient(
-        90deg, var( --main-secondary ), #F2A342
+    background: 
+        linear-gradient(to right, 
+        #FF512F 0%, 
+        #F09819  100%
     );
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
