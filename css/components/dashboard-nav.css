@@ -1,0 +1,125 @@
+.dashboard {
+    height: 100vh;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 275px 1fr;
+}
+
+.dashboard-menu {
+    height: 100%;
+    background-color: var( --main-primary );
+    color: white;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.dashboard-menu-a {
+    padding: 1em;
+}
+
+.dashboard-active-menu {
+    background-color: var( --white );
+    padding: 1em;
+    color: black;
+    font-weight: 600;
+    border-radius: 4px 0 0 4px;
+}
+
+.dashboard-logo-text {
+    color: white;
+}
+
+.dashboard-menu-items {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: .5em;
+}
+
+.dashboard-menu-item {
+    display: flex;
+    align-items: center;
+    gap: .75em;
+    font-family: 'Title';
+}
+
+.dashboard-menu-first-item {
+    margin-top: 1.75em;
+}
+
+
+.dashboard-menu-icon {
+    width: 18px;
+}
+
+.dashboard-submenu {
+    display: flex;
+    flex-direction: column;
+}
+
+.dashboard-menu-logout {
+    border: none;
+    background-color: transparent;
+    width: 100%;
+    height: 100%;
+    color: white;
+    font-size: 1rem;
+    font-family: 'Title';
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: .75em;
+    margin-left: -4px;
+    cursor: pointer;
+}
+
+.logout-modal {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, .3);
+    display: none;
+}
+
+.logout-form {
+    background-color: white;
+    position: relative;
+    padding: 1em;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 125px;
+}
+
+.logout-form-title {
+    font-size: 1.25rem;
+}
+
+.logout-form-text {
+    color: var( --main-primary );
+}
+
+.logout-form-close {
+    position: absolute;
+    color: black;
+    font-size: 2rem;
+    top: 0;
+    right: 16px;
+    cursor: pointer;
+}
+
+.logout-form-buttons {
+    display: flex;
+    gap: .75em;
+}
+
+.logout-form-button {
+    width: 150px;
+    height: 35px;
+}

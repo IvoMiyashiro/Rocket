@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
-    
-    const checkoutForm = document.querySelector('#checkout-form');
-    const formInput = document.querySelectorAll('.checkout-form-input');
+    const signupForm = document.querySelector('.signup-form');
+    const inputForm = document.querySelectorAll('.checkout-form-input');
+    const errorContainer = document.querySelector('.signup-form-error-container');
 
     const regEx = {
         name: /^[a-zA-ZÀ-ÿ\s]{1,40}$/,
@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
         localidad: /^[a-zA-ZÀ-ÿ\s]{1,40}$/,
         cp: /^[a-zA-ZÀ-ÿ\s]{1,40}$/,
         telefono: /^\d{7,14}$/,
+        password: /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d@$!%*#?&^_-]{6,}$/,
     }
 
     const formErrors = {
@@ -22,12 +23,12 @@ document.addEventListener('DOMContentLoaded', () => {
         provincia: false,
         localidad: false,
         cp: false,
-        // telefono: false,
+        telefono: false,
+        password: false,
     }
 
     const handleFormValidation = ( e ) => {
         const input = e.target;
-        console.log( input.name )
         switch ( input.name ) {
             case 'name':
                 inputValidation( regEx.name, input.name, input.value, '*El nombre no es válido.');
@@ -50,9 +51,16 @@ document.addEventListener('DOMContentLoaded', () => {
             case 'cp':
                 inputValidation( regEx.cp, input.name, input.value, '*El código postal no es válido.');
                 break;
-            // case 'telefono':
-            //     inputValidation( regEx.telefono, input.name, input.value, '*El telefono no es válido.');
-            //     break;
+            case 'telefono':
+                inputValidation( regEx.telefono, input.name, input.value, '*El número de telefono no es válido.');
+                break;
+            case 'password1':
+                inputValidation( regEx.password, input.name, input.value, '*Al menos 6 caracteres y 1 número.');
+                passwordValidation();
+                break;
+            case 'password2':
+                passwordValidation();
+                break;
             default:
                 return;
         }
@@ -71,7 +79,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     const selectValidation = ( inputName, value, message ) => {
-        console.log( value )
         if ( value !== "" ) {
             document.getElementById(`${ inputName }-error`).innerText = '';
             document.getElementById(`${ inputName }-select`).classList.remove( 'checkout-input-error' );
@@ -83,29 +90,49 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    checkoutForm.addEventListener('submit', ( e ) => {
-        e.preventDefault();
+    const passwordValidation = () => {
+        const inputPassword1 = document.getElementById('password1-input');
+	    const inputPassword2 = document.getElementById('password2-input');
 
-        if ( formErrors.name && formErrors.email && formErrors.address && formErrors.dpto && formErrors.provincia && formErrors.localidad && formErrors.cp ) {
-            document.querySelector('.checkout-form-error-box').style.display = 'none';
-            document.querySelector('#submit-button').innerHTML = `<div class="spinner"></div>`
-            document.querySelector('#submit-button').disabled = true
+        if( inputPassword1.value !== inputPassword2.value ) {
+            document.getElementById(`password2-input`).classList.add('checkout-input-error');
+            document.getElementById('password2-error').innerText = '*Las contraseñas deben ser iguales.';
+            formErrors[ 'password' ] = false;
+        } else {
+            document.getElementById(`password2-input`).classList.remove('checkout-input-error');
+            document.getElementById('password2-error').innerText = '';
+            formErrors[ 'password' ] = true;
+            console.log(formErrors.password)
+        }
+    }
+
+    signupForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        console.log(formErrors.name)
+        console.log(formErrors.email)
+        console.log(formErrors.password)
+        console.log(formErrors.address)
+        console.log(formErrors.dpto)
+        console.log(formErrors.provincia)
+        console.log(formErrors.localidad)
+        console.log(formErrors.cp)
+        console.log(formErrors.telefono)
+
+        if ( formErrors.name && formErrors.email && formErrors.password && formErrors.address && formErrors.dpto && formErrors.provincia && formErrors.localidad && formErrors.cp && formErrors.telefono ) {
+            document.querySelector('.signup-form-error-container').style.display = 'none';
+            document.querySelector('.signup-form-button').innerHTML = `<div class="spinner"></div>`
+            document.querySelector('.signup-form-button').disabled = true
             setTimeout( async() => {
-                document.querySelector('#submit-button').innerText = `Compra realizada`
                 checkoutForm.reset();
             }, 3000);
-
-            
         } else {
-            document.querySelector('.checkout-form-error-box').style.display = 'block';
+            document.querySelector('.signup-form-error-container').style.display = 'block';
         }
     });
 
-    formInput.forEach(( input ) => {
+    inputForm.forEach(( input ) => {
         input.addEventListener('keyup', handleFormValidation );
         input.addEventListener('blur', handleFormValidation );
         input.addEventListener('change', handleFormValidation );
     });
-
-
-})
+});

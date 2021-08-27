@@ -13,6 +13,7 @@
 @import "./components/cards/large.css";
 @import "./components/cards/xl.css";
 @import "./components/main-carousel.css";
+@import "./components/dashboard-nav.css";
 
 /* Components */
 
@@ -24,5 +25,6 @@
 @import "./pages/checkout.css";
 @import "./pages/login.css";
 @import "./pages/signup.css";
+@import "./pages/dashboard.css";
 
 /* Pages */
