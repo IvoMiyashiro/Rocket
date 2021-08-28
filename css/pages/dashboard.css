@@ -10,6 +10,16 @@
     margin-top: .5em;
 }
 
+.dashboard-image-container {
+    display: flex;
+    align-items: center;
+    gap: .5em ;
+}
+
+.dashboard-user-name {
+    font-weight: 600;
+}
+
 .dashboard-user-icon {
     width: 22px;
 }
@@ -94,3 +104,142 @@
     margin-top: 1.5em;
 }
 
+.dashboard-table-section {
+    margin-top: 3.5em;
+}
+
+.dashboard-table-title {
+    margin-bottom: 1em;
+}
+
+.dashboard-table {
+    width: 100%;
+    border-spacing: 0;
+}
+
+.dashboard-table-header {
+    background-color: var( --main-primary );
+    color: white;
+    height: 50px;
+    border-radius: 4px;
+}
+
+.dashboard-table-header th:first-child{
+    border-radius: 4px 0 0 4px;
+}
+
+.dashboard-table-header th:last-child{
+    border-radius: 0 4px 4px 0;
+}
+
+.dashboard-table-body td:first-child{
+    border-radius: 12px 0 0 12px;
+}
+
+.dashboard-table-body td:last-child{
+    border-radius: 0 12px 12px 0;
+}
+
+.dashboard-table-orders-col {
+    width: 125px;
+    text-align: left;
+    padding-left: 1.5em;
+}
+
+.dashboard-table-quantity-col {
+    width: 100px;
+    
+}
+
+.dashboard-table-date-col {
+    width: 125px;
+}
+
+.dashboard-table-price-col {
+    width: 100px;
+    padding-right: 1.5em;
+}
+
+.dashboard-table-product-col {
+    width: 450px;
+    text-align: left;
+    padding-left: 1.5em;
+}
+
+.dashboard-state-info-section {
+    display: flex;
+    gap: 1em;
+    justify-content: flex-end;
+    font-size: .85rem;
+    margin-bottom: .5em;
+}
+
+.dashboard-table-body {
+    height: 50px;
+    text-align: center;
+}
+
+
+.dashboard-state-info {
+    display: flex;
+    align-items: center;
+    gap: .35em;
+    color: var(--medium-grey);
+}
+
+.dashboard-table-ellipsis-icon {
+    width: 10px;
+    color: var(--dark-grey);
+    cursor: pointer;
+}
+
+.dashboard-table-state-delivered {
+    width: 10px;
+    height: 10px;
+    background-color: var(--green);
+    border-radius: 50%;
+}
+
+.dashboard-table-state-pending {
+    width: 10px;
+    height: 10px;
+    background-color: var(--main-secondary);
+    border-radius: 50%;
+}
+
+.dashboard-table-orders-cell {
+    text-align: left;
+    padding-left: 1.5em;
+    overflow: hidden;
+    white-space: nowrap;
+    max-width: 300px;
+    text-overflow: ellipsis;
+}
+
+.table-status {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    margin-top: 1.15em;
+}
+
+.dashboard-table-row {
+    height: 50px;
+}
+
+.dashboard-table-row:hover {
+    background-color: var( --light-grey );
+}
+
+.dashboard-see-all {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 2em;
+    font-size: .85rem;
+}
+
+.dashboard-see-all:hover {
+    text-decoration: underline;
+}
