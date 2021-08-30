@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/styles.css" >
     <script type="text/javascript" src="../js/dashboard-nav.js"></script>
-    <title> Dashboard | Rocket </title>
+    <script type="text/javascript" src="../js/dashboard-pubs-table.js"></script>
+    <title> Publicaciones | Rocket </title>
 </head>
 <body>
     <section class="dashboard">
@@ -26,16 +27,16 @@
                         <p> Dashboard </p>
                     </li>
                 </a>
-                <a href="dashboard-orders.html" class="dashboard-menu-a dashboard-active-menu">
+                <a href="dashboard-orders.html" class="dashboard-menu-a">
                     <li class="dashboard-menu-item">
                         <svg class="dashboard-menu-icon" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="tag" class="svg-inline--fa fa-tag fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M0 252.118V48C0 21.49 21.49 0 48 0h204.118a48 48 0 0 1 33.941 14.059l211.882 211.882c18.745 18.745 18.745 49.137 0 67.882L293.823 497.941c-18.745 18.745-49.137 18.745-67.882 0L14.059 286.059A48 48 0 0 1 0 252.118zM112 64c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48z"></path></svg>
-                        <p class="gradient-1"> Órdenes </p>
+                        <p> Órdenes </p>
                     </li>
                 </a>
-                <a href="dashboard-pubs.html" class="dashboard-menu-a">
+                <a href="dashboard-pubs.html" class="dashboard-menu-a dashboard-active-menu">
                     <li class="dashboard-menu-item">
                         <svg class="dashboard-menu-icon" aria-hidden="true" focusable="false" data-prefix="far" data-icon="window-restore" class="svg-inline--fa fa-window-restore fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M464 0H144c-26.5 0-48 21.5-48 48v48H48c-26.5 0-48 21.5-48 48v320c0 26.5 21.5 48 48 48h320c26.5 0 48-21.5 48-48v-48h48c26.5 0 48-21.5 48-48V48c0-26.5-21.5-48-48-48zm-96 464H48V256h320v208zm96-96h-48V144c0-26.5-21.5-48-48-48H144V48h320v320z"></path></svg>
-                        Publicaciones 
+                        <p class="gradient-1"> Publicaciones </p>  
                     </li>
                 </a>
                 <a href="dashboard-questions.html" class="dashboard-menu-a">
@@ -83,7 +84,7 @@
         </nav>
         <section class="dashboard-home">
             <section class="dashboard-head">
-                <h1 class="dashboard-title gradient-2"> Órdenes de Compras </h1>
+                <h1 class="dashboard-title gradient-3"> Mis Publicaciones </h1>
             </section>
             <section class="dashboard-table-section">
                     <section class="dashboard-state-info-section">
@@ -102,116 +103,69 @@
                             </form>
                         </section>
                         <section class="dashboard-orders-section">
-                            <div class="dashboard-state-info"> 
-                                <div class="dashboard-table-state-delivered"></div>
-                                Enviado
-                            </div>
-                            <div class="dashboard-state-info">
-                                <div class="dashboard-table-state-pending"></div>
-                                Pendiente
-                            </div>
+                            <a href="dashboard-create-pub.html">
+                                <button class="btnGradientOrange dashboard-pub-create-new">
+                                    Crear Publicación
+                                </button>
+                            </a>
                         </section>
                     </section>
                     <table class="dashboard-table">
                         <thead class="dashboard-table-header">
-                            <th class="dashboard-table-orders-col"> Órden </th>
                             <th class="dashboard-table-product-col"> Producto </th>
+                            <th class="dashboard-table-date-col"> Creado </th>
                             <th class="dashboard-table-price-col"> Precio </th>
                             <th class="dashboard-table-quantity-col"> Cantidad </th>
-                            <th class="dashboard-table-state-col"> Estado </th>
-                            <th class="dashboard-table-date-col"> Fecha </th>
+                            <th class="dashboard-table-state-col"> Activo </th>
+                            <th class="dashboard-table-accions-col"> Acciones </th>
                         </thead>
                         <tbody class="dashboard-table-body">
                             <tr class="dashboard-table-row">
-                                <td class="dashboard-table-orders-cell"><a href="order.html"> 12345678 </a> </td>
-                                <td class="dashboard-table-orders-cell"><a href="pub.html"> iPhone 11 | 32 GB | Black </a></td>
-                                <td class="dashboard-table-orders-cell"> 6000$ </td>
-                                <td> 2 </td>
-                                <td class="table-status">
-                                    <div class="dashboard-table-state-delivered"></div> 
+                                <td class="dashboard-table-orders-cell" >
+                                    <a href="#" class="pub-product-cell" >
+                                        <img 
+                                            src="../assets/images/iPhone-11.png" 
+                                            alt="iPhone 11" 
+                                            class="pub-table-image"
+                                        />
+                                        <p class="pub-table-product-title"> iPhone 11 | 32 GB | Black </p>
+                                    </a>
                                 </td>
                                 <td> 27 Ago. 2021 </td>
+                                <td class="dashboard-table-orders-cell"> 6000$ </td>
+                                <td> 2 </td>
+                                <td>
+                                    <button class="dashboard-table-on pub-status"> ON </button>
+                                </td>
+                                <td class="dashboard-table-actions">
+                                    <svg class="dashboard-table-icon" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="ellipsis-v" class="svg-inline--fa fa-ellipsis-v fa-w-6" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 512"><path fill="currentColor" d="M96 184c39.8 0 72 32.2 72 72s-32.2 72-72 72-72-32.2-72-72 32.2-72 72-72zM24 80c0 39.8 32.2 72 72 72s72-32.2 72-72S135.8 8 96 8 24 40.2 24 80zm0 352c0 39.8 32.2 72 72 72s72-32.2 72-72-32.2-72-72-72-72 32.2-72 72z"></path></svg>
+                                    <div class="dashboard-actions-menu">
+                                        <a href="dashboard-edit-pub"> Editar </a>
+                                        <button class="dashboard-delete-pub"> Eliminar </button>
+                                    </div>
+                                </td>
                             </tr>
                             <tr class="dashboard-table-row">
-                                <td class="dashboard-table-orders-cell"><a href="order.html"> 12345678 </a> </td>
-                                <td class="dashboard-table-orders-cell"><a href="pub.html"> iPhone 11 | 32 GB | Black </a></td>
-                                <td class="dashboard-table-orders-cell"> 6000$ </td>
-                                <td> 2 </td>
-                                <td class="table-status">
-                                    <div class="dashboard-table-state-delivered"></div> 
+                                <td class="dashboard-table-orders-cell" >
+                                    <a href="#" class="pub-product-cell" >
+                                        <img src="../assets/images/iPhone-11.png" alt="iPhone 11" class="pub-table-image">
+                                        <p class="pub-table-product-title"> iPhone 11 | 32 GB | Black </p>
+                                    </a>
                                 </td>
                                 <td> 27 Ago. 2021 </td>
+                                <td class="dashboard-table-orders-cell"> 6000$ </td>
+                                <td> 2 </td>
+                                <td>
+                                    <button class="dashboard-table-off pub-status"> OFF </button>
+                                </td>
+                                <td class="dashboard-table-actions">
+                                    <svg class="dashboard-table-icon" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="ellipsis-v" class="svg-inline--fa fa-ellipsis-v fa-w-6" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 512"><path fill="currentColor" d="M96 184c39.8 0 72 32.2 72 72s-32.2 72-72 72-72-32.2-72-72 32.2-72 72-72zM24 80c0 39.8 32.2 72 72 72s72-32.2 72-72S135.8 8 96 8 24 40.2 24 80zm0 352c0 39.8 32.2 72 72 72s72-32.2 72-72-32.2-72-72-72-72 32.2-72 72z"></path></svg>
+                                    <div class="dashboard-actions-menu">
+                                        <a href="dashboard-edit-pub"> Editar </a>
+                                        <button class="dashboard-delete-pub"> Eliminar </button>
+                                    </div>
+                                </td>
                             </tr>
-                            <tr class="dashboard-table-row">
-                                <td class="dashboard-table-orders-cell"><a href="order.html"> 12345678 </a> </td>
-                                <td class="dashboard-table-orders-cell"><a href="pub.html"> iPhone 11 | 32 GB | Black </a></td>
-                                <td class="dashboard-table-orders-cell"> 6000$ </td>
-                                <td> 2 </td>
-                                <td class="table-status">
-                                    <div class="dashboard-table-state-delivered"></div> 
-                                </td>
-                                <td> 27 Ago. 2021 </td>
-                            </tr>
-                            <tr class="dashboard-table-row">
-                                <td class="dashboard-table-orders-cell"><a href="order.html"> 12345678 </a> </td>
-                                <td class="dashboard-table-orders-cell"><a href="pub.html"> iPhone 11 | 32 GB | Black </a></td>
-                                <td class="dashboard-table-orders-cell"> 6000$ </td>
-                                <td> 2 </td>
-                                <td class="table-status">
-                                    <div class="dashboard-table-state-delivered"></div> 
-                                </td>
-                                <td> 27 Ago. 2021 </td>
-                            </tr>
-                            <tr class="dashboard-table-row">
-                                <td class="dashboard-table-orders-cell"><a href="order.html"> 12345678 </a> </td>
-                                <td class="dashboard-table-orders-cell"><a href="pub.html"> iPhone 11 | 32 GB | Black </a></td>
-                                <td class="dashboard-table-orders-cell"> 6000$ </td>
-                                <td> 2 </td>
-                                <td class="table-status">
-                                    <div class="dashboard-table-state-delivered"></div> 
-                                </td>
-                                <td> 27 Ago. 2021 </td>
-                            </tr>
-                            <tr class="dashboard-table-row">
-                                <td class="dashboard-table-orders-cell"><a href="order.html"> 12345678 </a> </td>
-                                <td class="dashboard-table-orders-cell"><a href="pub.html"> iPhone 11 | 32 GB | Black </a></td>
-                                <td class="dashboard-table-orders-cell"> 6000$ </td>
-                                <td> 2 </td>
-                                <td class="table-status">
-                                    <div class="dashboard-table-state-delivered"></div> 
-                                </td>
-                                <td> 27 Ago. 2021 </td>
-                            </tr>
-                            <tr class="dashboard-table-row">
-                                <td class="dashboard-table-orders-cell"><a href="order.html"> 12345678 </a> </td>
-                                <td class="dashboard-table-orders-cell"><a href="pub.html"> iPhone 11 | 32 GB | Black </a></td>
-                                <td class="dashboard-table-orders-cell"> 6000$ </td>
-                                <td> 2 </td>
-                                <td class="table-status">
-                                    <div class="dashboard-table-state-delivered"></div> 
-                                </td>
-                                <td> 27 Ago. 2021 </td>
-                            </tr>
-                            <tr class="dashboard-table-row">
-                                <td class="dashboard-table-orders-cell"><a href="order.html"> 12345678 </a> </td>
-                                <td class="dashboard-table-orders-cell"><a href="pub.html"> iPhone 11 | 32 GB | Black </a></td>
-                                <td class="dashboard-table-orders-cell"> 6000$ </td>
-                                <td> 2 </td>
-                                <td class="table-status">
-                                    <div class="dashboard-table-state-delivered"></div> 
-                                </td>
-                                <td> 27 Ago. 2021 </td>
-                            </tr>
-                            <tr class="dashboard-table-row">
-                                <td class="dashboard-table-orders-cell"><a href="order.html"> 12345678 </a> </td>
-                                <td class="dashboard-table-orders-cell"><a href="pub.html"> iPhone 11 | 32 GB | Black </a></td>
-                                <td class="dashboard-table-orders-cell"> 6000$ </td>
-                                <td> 2 </td>
-                                <td class="table-status">
-                                    <div class="dashboard-table-state-delivered"></div> 
-                                </td>
-                                <td> 27 Ago. 2021 </td>
-                            </tr> 
                         </tbody>
                     </table>
                     <a href="orders.html" class="dashboard-see-all gradient-3"> Ver todos </a>
