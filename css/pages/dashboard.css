@@ -349,3 +349,113 @@
     justify-content: center;
     left: 0;
 }
+
+.dashboard-question-pending-section {
+    display: flex;
+    align-items: center;
+    gap: .25em;
+    margin-bottom: 1em;
+}
+
+.dashboard-question-pending-section p {
+    font-size: .85rem;
+}
+
+.dashboard-question-product {
+    display: flex;
+    gap: 1em;
+    position: relative;
+    box-shadow:
+    0 0px 2.9px rgba(0, 0, 0, 0.011),
+    0 0px 7px rgba(0, 0, 0, 0.016),
+    0 0px 13.1px rgba(0, 0, 0, 0.02),
+    0 0px 23.5px rgba(0, 0, 0, 0.024),
+    0 0px 43.9px rgba(0, 0, 0, 0.029),
+    0 0px 105px rgba(0, 0, 0, 0.04)
+    ;
+    border-radius: 4px;
+    padding: .75em;
+    transition: .2s ease-in-out;
+}
+
+.dashboard-question-product:hover {
+    box-shadow:
+    0 0px 2.9px rgba(0, 0, 0, 0.025),
+    0 0px 7px rgba(0, 0, 0, 0.036),
+    0 0px 13.1px rgba(0, 0, 0, 0.045),
+    0 0px 23.5px rgba(0, 0, 0, 0.054),
+    0 0px 43.9px rgba(0, 0, 0, 0.065),
+    0 0px 105px rgba(0, 0, 0, 0.09)
+    ;
+    transition: .2s ease-in-out;
+}
+
+.dashboard-question-product-img {
+    height: 80px;
+}
+
+.dashboard-question-product-title {
+    font-weight: 600;
+}
+
+.question-section {
+    margin: 3em 0;
+}
+
+.question-pending {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+
+.dashboard-question-product-section {
+    display: flex;
+    flex-direction: column;
+    gap: .5em;
+    width: 100%;
+}
+
+.dashboard-questions-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em;
+}
+
+.dashboard-question-answer {
+    width: 93%;
+    resize: none;
+    padding-bottom: .25em;
+    border: none;
+    border-bottom: 1px solid var( --light-grey );
+    outline: none;
+    font-size: 1rem;
+}
+
+.dashboard-question-label {
+    position: relative;
+}
+
+.dashboard-question-submit-button {
+    position: absolute;
+    right: -35px;
+    border: none;
+    background-color: transparent;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    box-shadow:
+    0 0px 2.9px rgba(0, 0, 0, 0.025),
+    0 0px 7px rgba(0, 0, 0, 0.036),
+    0 0px 13.1px rgba(0, 0, 0, 0.045),
+    0 0px 23.5px rgba(0, 0, 0, 0.054),
+    0 0px 43.9px rgba(0, 0, 0, 0.065),
+    0 0px 105px rgba(0, 0, 0, 0.09)
+    ;
+    cursor: pointer;
+}
+
+.dashboard-submit-button-icon {
+    width: 10px;
+    margin-left: .15em;
+    margin-top: .15em;
+}

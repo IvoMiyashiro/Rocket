@@ -16,5 +16,11 @@ document.addEventListener('DOMContentLoaded', () => {
         logoutModal.style.display = 'none';
     });
 
+    window.addEventListener('click', (e) => {
+        if ( e.target.id === 'logout-modal' ) {
+            logoutModal.style.display = 'none';
+        }
+    })
+
 
 });
