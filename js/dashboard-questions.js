@@ -2,15 +2,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const questionForm = document.querySelectorAll('.dashboard-question-form');
     const inputAnswer = document.querySelectorAll('.dashboard-question-answer');
+    const formLabel = document.querySelectorAll('.dashboard-question-label');
+    const pendingQuestions = document.querySelectorAll('.question-pending');
 
-    const handleAnswerSubmit = ( e, i ) => {
-        e.preventDefault();
-        console.log( e );
-        console.log( i )
+    console.log('object')
+
+    for ( let i = 0; i < questionForm.length; i++ ) {
+        questionForm[i].onsubmit = (e) => {
+            e.preventDefault();
+            pendingQuestions[i].style.display = 'none';
+            const inputValue = inputAnswer[i].value;
+            formLabel[i].innerHTML = `
+                <span class="gradient-3"> R: </span>
+                ${ inputValue } 
+            `; 
+        }
     }
-
-    questionForm.forEach((form, i) => {
-        form.addEventListener('submit', ( i ) => handleAnswerSubmit );
-    });
 
 });

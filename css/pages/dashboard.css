@@ -454,8 +454,63 @@
     cursor: pointer;
 }
 
+.dashboard-create-pub-desc {
+    width: 575px;
+    height: 115px;
+    padding: .75em;
+    resize: none;
+    font-family: 'Text';
+    outline: none;
+    border: none;
+    background-color: var(--light-grey );
+}
+
 .dashboard-submit-button-icon {
     width: 10px;
     margin-left: .15em;
     margin-top: .15em;
+}
+
+.dashboard-pub-img-container {
+    display: flex;
+    gap: 3.25em;
+}
+
+.dashboard-create-pub-input-img {
+    display: none;
+}
+
+.dashboard-create-pub-img {
+    width: 160px;
+    height: 160px;
+    border: 1px solid var(--medium-grey );
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+}
+
+.dashboard-create-pub-checkbox-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.dashboard-checkbox-label {
+    font-size: .85rem;
+}
+
+.dashboard-create-pub-checkbox {
+    display: flex;
+    align-items: center;
+}
+
+.signup-button-container-dashboard {
+    margin-top: 1.25em;
+    justify-content: center;
+    display: flex;
+}
+
+.create-pub-form-button {
+    width: 300px;
 }
