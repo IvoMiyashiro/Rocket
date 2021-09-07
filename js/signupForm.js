@@ -1,7 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     const signupForm = document.querySelector('.signup-form');
     const inputForm = document.querySelectorAll('.checkout-form-input');
-    const errorContainer = document.querySelector('.signup-form-error-container');
 
     const regEx = {
         name: /^[a-zA-ZÀ-ÿ\s]{1,40}$/,
@@ -108,15 +107,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     signupForm.addEventListener('submit', (e) => {
         e.preventDefault();
-        console.log(formErrors.name)
-        console.log(formErrors.email)
-        console.log(formErrors.password)
-        console.log(formErrors.address)
-        console.log(formErrors.dpto)
-        console.log(formErrors.provincia)
-        console.log(formErrors.localidad)
-        console.log(formErrors.cp)
-        console.log(formErrors.telefono)
 
         if ( formErrors.name && formErrors.email && formErrors.password && formErrors.address && formErrors.dpto && formErrors.provincia && formErrors.localidad && formErrors.cp && formErrors.telefono ) {
             document.querySelector('.signup-form-error-container').style.display = 'none';

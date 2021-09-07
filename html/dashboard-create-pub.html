@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="../css/styles.css" >
         <script type="text/javascript" src="../js/dashboard-nav.js"></script>
-        <script type="text/javascript" src="../js/dashboard-pubs-table.js"></script>
+        <script type="text/javascript" src="../js/dashboard-create-pub.js"></script>
         <title> Crear Publicación | Rocket </title>
     </head>
 <body>
@@ -94,38 +94,39 @@
                             <input 
                                 type="text" 
                                 class="checkout-form-input"
-                                name="name"
+                                name="titulo"
                                 autocomplete="off"
-                                id="name-input"
+                                id="titulo-input"
                                 value=""
+                                placeholder="Al menos 5 palabras..."
                             />
-                            <small class="checkout-form-error" id="name-error"></small>
+                            <small class="checkout-form-error" id="titulo-error"></small>
                         </div>
                         <div class="checkout-form-control">
                             <label for="name" class="checkout-form-label"> Marca * </label>
                             <select 
                                 name="marca" 
                                 class="checkout-form-input checkout-form-select"
-                                id="provincia-select"
+                                id="marca-select"
                                 value=""
                             >
                                 <option value=""> Seleccionar </option>
                                 <option value="Apple"> Apple </option>
-                                <option value="BOSE"> BOSE </option>
+                                <option value="BOSE"> Bose </option>
                                 <option value="LG"> LG </option>
                                 <option value="Motorola"> Motorola </option>
                                 <option value="Samsung"> Samsung </option>
                                 <option value="Skullcandy"> Skullcandy </option>
                                 <option value="Otro"> Otro </option>
                             </select>
-                            <small class="checkout-form-error" id="provincia-error"></small>
+                            <small class="checkout-form-error" id="marca-error"></small>
                         </div>
                         <div class="checkout-form-control">
                             <label for="name" class="checkout-form-label"> Categoria * </label>
                             <select 
                                 name="categoria" 
                                 class="checkout-form-input checkout-form-select"
-                                id="provincia-select"
+                                id="categoria-select"
                                 value=""
                             >
                                 <option value=""> Seleccionar </option>
@@ -133,14 +134,14 @@
                                 <option value="Accesorios"> Accesorios </option>
                                 <option value="Smartphones"> Smartphones </option>
                             </select>
-                            <small class="checkout-form-error" id="provincia-error"></small>
+                            <small class="checkout-form-error" id="categoria-error"></small>
                         </div>
                         <div class="checkout-form-control">
                             <label for="name" class="checkout-form-label"> Color * </label>
                             <select 
                                 name="color" 
                                 class="checkout-form-input checkout-form-select"
-                                id="provincia-select"
+                                id="color-select"
                                 value=""
                             >
                                 <option value=""> Seleccionar </option>
@@ -154,29 +155,29 @@
                                 <option value="Verde"> Verde </option>
                                 <option value="Otro"> Otro </option>
                             </select>
-                            <small class="checkout-form-error" id="provincia-error"></small>
+                            <small class="checkout-form-error" id="color-error"></small>
                         </div>
                         <div class="checkout-form-control">
                             <label for="name" class="checkout-form-label"> Cantidad * </label>
                             <input 
-                                type="text" 
+                                type="number" 
                                 class="checkout-form-input"
-                                name="name"
+                                name="cantidad"
                                 autocomplete="off"
-                                id="name-input"
-                                value=""
+                                value="0"
+                                min="0"
                             />
-                            <small class="checkout-form-error" id="name-error"></small>
+                            <small class="checkout-form-error" id="cantidad-error"></small>
                         </div>
                         <div class="checkout-form-control">
                             <label for="name" class="checkout-form-label"> Precio * </label>
                             <input 
-                                type="text" 
+                                type="number" 
                                 class="checkout-form-input"
-                                name="name"
+                                name="price"
                                 autocomplete="off"
-                                id="name-input"
-                                value=""
+                                value="0"
+                                min="0"
                             />
                             <small class="checkout-form-error" id="name-error"></small>
                         </div>
@@ -187,8 +188,13 @@
                         <section class="checkout-form-section">
                             <div class="checkout-form-control">
                                 <label for="name" class="checkout-form-label "> Descripción * </label>
-                                <textarea class="dashboard-create-pub-desc"></textarea>
-                                <small class="checkout-form-error" id="dpto-error"></small>
+                                <textarea 
+                                    class="dashboard-create-pub-desc checkout-form-input" 
+                                    placeholder="Debe tener al menos 5 palabras..."
+                                    name="desc"
+                                    id="desc-input"
+                                ></textarea>
+                                <small class="checkout-form-error" id="desc-error"></small>
                             </div>
                         </section>
                         <section class="checkout-form-section">
@@ -200,23 +206,59 @@
                                             type="file"
                                             class="dashboard-create-pub-input-img"
                                         />
-                                        <button> Selecciónar </button>
+                                        <div class="create-pub-img-container">
+                                            <img 
+                                                src="" 
+                                                alt=""
+                                                class="create-pub-img"
+                                            />
+                                            <button class="create-pub-delete-img"> &times; </button>
+                                        </div>
+                                        <button 
+                                            class="select-img-button"
+                                            type="button"
+                                        >
+                                        Selecciónar 
+                                    </button>
                                     </div>
                                     <div class="dashboard-create-pub-img">
                                         <input 
                                             type="file"
                                             class="dashboard-create-pub-input-img"
                                         />
-                                        <button> Selecciónar </button>
+                                        <img 
+                                            src="" 
+                                            alt=""
+                                            class="create-pub-img"
+                                        />
+                                        <button class="create-pub-delete-img" type="button"> &times; </button>
+                                        <button 
+                                            class="select-img-button"
+                                            type="button"
+                                        >
+                                        Selecciónar 
+                                    </button>
                                     </div>
                                     <div class="dashboard-create-pub-img">
                                         <input 
                                             type="file"
                                             class="dashboard-create-pub-input-img"
                                         />
-                                        <button> Selecciónar </button>
+                                        <img 
+                                            src="" 
+                                            alt=""
+                                            class="create-pub-img"
+                                        />
+                                        <button class="create-pub-delete-img"> &times; </button>
+                                        <button 
+                                            class="select-img-button"
+                                            type="button"
+                                        >
+                                        Selecciónar 
+                                    </button>
                                     </div>
                                 </div>
+                                <small class="checkout-form-error" id="img-error"></small>
                             </div>
                         </section>
                         <section class="checkout-form-section dashboard-create-pub-checkbox-container">

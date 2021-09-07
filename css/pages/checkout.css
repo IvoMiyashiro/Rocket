@@ -67,20 +67,21 @@
 
 .checkout-form-label {
     font-size: .85rem;
-    margin-bottom: .25em;
+    margin-bottom: .5em;
 }
 
 .checkout-form-input {
     width: 265px;
     height: 15px;
     padding: .65em;
-    font-size: 1rem;
+    font-size: .9rem;
     border-radius: 4px;
     background-color: var( --light-grey );
     border: none;
     outline: none;
     padding-left: 1em;
     border: 2px solid transparent;
+    font-family: 'Text';
 }
 
 .checkout-form-error {

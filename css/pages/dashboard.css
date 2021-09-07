@@ -461,8 +461,6 @@
     resize: none;
     font-family: 'Text';
     outline: none;
-    border: none;
-    background-color: var(--light-grey );
 }
 
 .dashboard-submit-button-icon {
@@ -488,6 +486,23 @@
     align-items: center;
     justify-content: center;
     border-radius: 4px;
+    position: relative;
+}
+
+.create-pub-img-container {
+    display: none;
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+    position: absolute;
+}
+
+.create-pub-delete-img {
+    border: none;
+    background-color: transparent;
+    font-size: 1.5rem;
+    padding: 0;
+    cursor: pointer;
 }
 
 .dashboard-create-pub-checkbox-container {
