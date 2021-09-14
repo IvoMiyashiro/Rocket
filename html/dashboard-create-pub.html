@@ -98,7 +98,7 @@
                                 autocomplete="off"
                                 id="titulo-input"
                                 value=""
-                                placeholder="Al menos 5 palabras..."
+                                placeholder="Al menos 5 caracteres..."
                             />
                             <small class="checkout-form-error" id="titulo-error"></small>
                         </div>
@@ -190,7 +190,7 @@
                                 <label for="name" class="checkout-form-label "> Descripción * </label>
                                 <textarea 
                                     class="dashboard-create-pub-desc checkout-form-input" 
-                                    placeholder="Debe tener al menos 5 palabras..."
+                                    placeholder="Al menos 10 caracteres..."
                                     name="desc"
                                     id="desc-input"
                                 ></textarea>
@@ -212,50 +212,69 @@
                                                 alt=""
                                                 class="create-pub-img"
                                             />
-                                            <button class="create-pub-delete-img"> &times; </button>
+                                            <button 
+                                                class="create-pub-delete-img" 
+                                                type="button"
+                                            > 
+                                                &times; 
+                                            </button>
                                         </div>
                                         <button 
                                             class="select-img-button"
                                             type="button"
                                         >
-                                        Selecciónar 
-                                    </button>
+                                            Selecciónar 
+                                        </button>
                                     </div>
                                     <div class="dashboard-create-pub-img">
                                         <input 
                                             type="file"
                                             class="dashboard-create-pub-input-img"
                                         />
-                                        <img 
-                                            src="" 
-                                            alt=""
-                                            class="create-pub-img"
-                                        />
-                                        <button class="create-pub-delete-img" type="button"> &times; </button>
+                                        <div class="create-pub-img-container">
+                                            <img 
+                                                src="" 
+                                                alt=""
+                                                class="create-pub-img"
+                                            />
+                                            <button 
+                                                class="create-pub-delete-img" 
+                                                type="button"
+                                            > 
+                                                &times; 
+                                            </button>
+                                        </div>
                                         <button 
                                             class="select-img-button"
                                             type="button"
                                         >
-                                        Selecciónar 
-                                    </button>
+                                            Selecciónar 
+                                        </button>
                                     </div>
                                     <div class="dashboard-create-pub-img">
                                         <input 
                                             type="file"
                                             class="dashboard-create-pub-input-img"
                                         />
-                                        <img 
-                                            src="" 
-                                            alt=""
-                                            class="create-pub-img"
-                                        />
-                                        <button class="create-pub-delete-img"> &times; </button>
+                                        <div class="create-pub-img-container">
+                                            <img 
+                                                src="" 
+                                                alt=""
+                                                class="create-pub-img"
+                                            />
+                                            <button 
+                                                class="create-pub-delete-img" 
+                                                type="button"
+                                            > 
+                                                &times; 
+                                            </button>
+                                        </div>
                                         <button 
                                             class="select-img-button"
                                             type="button"
                                         >
-                                        Selecciónar 
-                                    </button>
+                                            Selecciónar 
+                                        </button>
                                     </div>
                                 </div>
                                 <small class="checkout-form-error" id="img-error"></small>
