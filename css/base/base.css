@@ -250,3 +250,25 @@ input:-webkit-autofill:active {
     border-left-color: #F09819;
     animation: spin .5s linear infinite;
 }
+
+@keyframes fadeInBottom {
+    from {
+        opacity: 0;
+        transform: translateY(100%);
+    }
+    to { opacity: 1 }
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0;}
+    100% { opacity: 1;}
+}
+
+.section-title {
+    opacity: 0;
+}
+
+.fade-bottom-animation {
+    animation: fadeInBottom linear .5s;
+    opacity: 1;
+}

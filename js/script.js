@@ -18,4 +18,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
     /* Navbar Cart */
 
+    /* Fade Animation */
+
+    window.addEventListener('scroll', () => {
+        const title = document.querySelectorAll('.section-title');
+
+        for ( let i = 0; i < title.length; i++ ) {
+            
+            const windowheight = window.innerHeight;
+            const fadeTitle = title[i].getBoundingClientRect().top;
+            const revealPoint = 150;
+    
+            if ( fadeTitle < windowheight - revealPoint ) {
+                title[i].classList.add('fade-bottom-animation');
+            }
+        }
+    })
+
+    /* Fade Animation */
+
 });
