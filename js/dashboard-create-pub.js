@@ -77,19 +77,34 @@ document.addEventListener('DOMContentLoaded', () => {
         selectImgBtn[i].addEventListener('click', () => {
             inputImage[i].click();
             inputImage[i].addEventListener('change', (e) => {
-                console.log(e.target.mozFullPath)
-                const fileExtension = e.target.value.split('.');
-
-                if ( !validExtensions.includes( fileExtension[1] )) {
-                    document.getElementById(`img-error`).innerText = '*Archivo/s no válido/s.';
-                    imageContainer[i].classList.add( 'checkout-input-error' );
-                    formErrors[ inputName ] = true;
-                } else {
-                    document.getElementById(`img-error`).innerText = '';
-                    imageContainer[i].classList.remove( 'checkout-input-error' );
+                const file = this.files;
+                console.log(file)
+                if (file) {
+                    const reader = new FileReader();
                     image[i].style.display = 'block';
-                    img[i].src = e.target.value
+                    reader.addEventListener('load', () => {
+                        console.log(this)
+                        img[i].setAttribute('src', this.result);
+                    });
+                    reader.readAsDataURL(file);
                 }
+                // const fileExtension = e.target.value.split('.');
+
+                // if ( !validExtensions.includes( fileExtension[1] )) {
+                //     document.getElementById(`img-error`).innerText = '*Archivo/s no válido/s.';
+                //     imageContainer[i].classList.add( 'checkout-input-error' );
+                //     formErrors[ inputName ] = true;
+                // } else {
+                //     document.getElementById(`img-error`).innerText = '';
+                //     imageContainer[i].classList.remove( 'checkout-input-error' );
+
+                //     const reader = new FileReader();
+                //     image[i].style.display = 'block';
+                //     reader.addEventListener('load', () => {
+                //         img[i].setAttribute('src', this.result);
+                //     });
+                //     reader.readAsDataURL(file);
+                // }
                 
             });
         });
