@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const selectImgBtn = document.querySelectorAll('.select-img-button');
     const image = document.querySelectorAll('.create-pub-img-container');
     const img = document.querySelectorAll('.create-pub-img');
+    const removeImg = document.querySelectorAll('.create-pub-delete-img');
 
     regEx = {
         titulo: /^[A-Za-zÀ-ÿ0-9\s\-_,\.;:()|]{5,40}$/,
@@ -18,10 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
         marca: false,
         categoria: false,
         color: false,
-        cantidad: false,
-        precio: false,
         desc: false,
-        imgs: false,
     };
 
     const validExtensions = ['jpg', 'jpeg', 'png'];
@@ -76,49 +74,50 @@ document.addEventListener('DOMContentLoaded', () => {
     for ( let i = 0; i < selectImgBtn.length; i++ ) {
         selectImgBtn[i].addEventListener('click', () => {
             inputImage[i].click();
-            inputImage[i].addEventListener('change', (e) => {
-                const file = this.files;
-                console.log(file)
-                if (file) {
-                    const reader = new FileReader();
-                    image[i].style.display = 'block';
-                    reader.addEventListener('load', () => {
-                        console.log(this)
-                        img[i].setAttribute('src', this.result);
-                    });
-                    reader.readAsDataURL(file);
+            inputImage[i].addEventListener('change', function(e) {
+                const file = this.files[0];
+                const fileExtension = e.target.value.split('.');
+
+                if ( file ) {
+                    if ( !validExtensions.includes( fileExtension[1] )) {
+                        document.getElementById(`img-error`).innerText = '*Archivo/s no válido/s.';
+                        imageContainer[i].classList.add( 'checkout-input-error' );
+                        formErrors[ inputName ] = true;
+                    } else {
+                        document.getElementById(`img-error`).innerText = '';
+                        imageContainer[i].classList.remove( 'checkout-input-error' );
+
+                        const reader = new FileReader();
+                        reader.addEventListener('load', function() {
+                            const result = reader.result;
+                            img[i].src = result;
+                            image[i].style.display = 'block';
+                        });
+
+                        removeImg[i].addEventListener('click', function() {
+                            img[i].src = "";
+                            image[i].style.display = 'none';
+                        });
+
+                        reader.readAsDataURL(file);
+                        formErrors[ img ] = true;
+                    }
                 }
-                // const fileExtension = e.target.value.split('.');
 
-                // if ( !validExtensions.includes( fileExtension[1] )) {
-                //     document.getElementById(`img-error`).innerText = '*Archivo/s no válido/s.';
-                //     imageContainer[i].classList.add( 'checkout-input-error' );
-                //     formErrors[ inputName ] = true;
-                // } else {
-                //     document.getElementById(`img-error`).innerText = '';
-                //     imageContainer[i].classList.remove( 'checkout-input-error' );
-
-                //     const reader = new FileReader();
-                //     image[i].style.display = 'block';
-                //     reader.addEventListener('load', () => {
-                //         img[i].setAttribute('src', this.result);
-                //     });
-                //     reader.readAsDataURL(file);
-                // }
-                
             });
         });
-    }
+    };
 
     signupForm.addEventListener('submit', (e) => {
         e.preventDefault();
-
-        if ( formErrors.name && formErrors.email && formErrors.password && formErrors.address && formErrors.dpto && formErrors.provincia && formErrors.localidad && formErrors.cp && formErrors.telefono ) {
+        console.log(formErrors)
+        if ( formErrors.titulo && formErrors.marca && formErrors.categoria && formErrors.color && formErrors.desc ) {
             document.querySelector('.signup-form-error-container').style.display = 'none';
-            document.querySelector('.signup-form-button').innerHTML = `<div class="spinner"></div>`
-            document.querySelector('.signup-form-button').disabled = true
+            document.querySelector('.create-pub-form-button').innerHTML = `<div class="spinner"></div>`
+            document.querySelector('.create-pub-form-button').disabled = true
             setTimeout( async() => {
-                checkoutForm.reset();
+                signupForm.reset();
+                window.location.href = "dashboard-pubs.html"
             }, 3000);
         } else {
             document.querySelector('.signup-form-error-container').style.display = 'block';

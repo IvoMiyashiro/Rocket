@@ -123,7 +123,9 @@ input:-webkit-autofill:active {
     color: white;            
     box-shadow: 0 0 20px #eee;
     border-radius: 4px;
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     border: none;
     height: 50px;
     width: 150px;
@@ -173,7 +175,6 @@ input:-webkit-autofill:active {
 .button-icon {
     width: 8px;
 }
-
 
 .gradient-1 {
     background: #ccc;
@@ -248,4 +249,26 @@ input:-webkit-autofill:active {
     border-radius: 50%;
     border-left-color: #F09819;
     animation: spin .5s linear infinite;
+}
+
+@keyframes fadeInBottom {
+    from {
+        opacity: 0;
+        transform: translateY(100%);
+    }
+    to { opacity: 1 }
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0;}
+    100% { opacity: 1;}
+}
+
+.section-title {
+    opacity: 0;
+}
+
+.fade-bottom-animation {
+    animation: fadeInBottom linear .5s;
+    opacity: 1;
 }
