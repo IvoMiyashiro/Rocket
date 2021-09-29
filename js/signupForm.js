@@ -107,17 +107,14 @@ document.addEventListener('DOMContentLoaded', () => {
    signupForm.addEventListener('submit', (e) => {
       e.preventDefault();
       if (formErrors.name && formErrors.email && formErrors.password && formErrors.address && formErrors.dpto && formErrors.province && formErrors.locality && formErrors.zip && formErrors.phone) {
-         document.querySelector('.signup-form-error-container').style.display = 'none';
-         document.querySelector('.signup-form-button').innerHTML = `<div class="spinner"></div>`
-         document.querySelector('.signup-form-button').disabled = true
-         setTimeout(async () => {
-            signupForm.attributes("method", "post")
-            signupForm.reset();
-            signupForm.submit();
-         }, 3000);
+         let formValues = {};
+         for (let i = 0; i < inputForm.length; i++) {
+            formValues[inputForm[i].name] = inputForm[i].value;
+         };
+         console.log(JSON.stringify(formValues))
+         postRequest(JSON.stringify(formValues));
       } else {
          document.querySelector('.signup-form-error-container').style.display = 'block';
-         console.log(formErrors);
       }
    });
 
@@ -126,4 +123,24 @@ document.addEventListener('DOMContentLoaded', () => {
       input.addEventListener('blur', handleFormValidation);
       input.addEventListener('change', handleFormValidation);
    });
+
+   function postRequest(values) {
+      xhr = new XMLHttpRequest();
+      xhr.open('POST', '../services/signup.php', true);
+      xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+
+      xhr.onprogress = function () {
+         document.querySelector('.signup-form-error-container').style.display = 'none';
+         document.querySelector('.signup-form-button').innerHTML = `<div class="spinner"></div>`;
+         document.querySelector('.signup-form-button').disabled = true;
+      }
+
+      xhr.onload = function () {
+         if (this.status == 200) {
+            window.location.href = 'login.html';
+         }
+      }
+
+      xhr.send("values=" + values);
+   }
 });

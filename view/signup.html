@@ -11,9 +11,9 @@
 </head>
 
 <body>
-   <section class="login-form-section">
+   <div class="login-form-section">
       <img src="../assets/images/backgroung.jpg" alt="gradient" class="login-background">
-      <form action="/" class="signup-form">
+      <form class="signup-form">
          <section class="signup-form-section">
             <a href="index.html">
                <svg class="logo-icon login-logo-icon" aria-hidden="true" focusable="false" data-prefix="fas"
@@ -28,26 +28,24 @@
             <section class="signup-form-user-section">
                <div class="checkout-form-control">
                   <label for="name" class="checkout-form-label"> Nombre Completo * </label>
-                  <input type="text" class="checkout-form-input" name="name" autocomplete="off" id="name-input"
-                     value="" />
+                  <input type="text" class="checkout-form-input" name="name" autocomplete="off" id="name-input" />
                   <small class="checkout-form-error" id="name-error"></small>
                </div>
                <div class="checkout-form-control">
                   <label for="name" class="checkout-form-label"> Email * </label>
-                  <input type="email" class="checkout-form-input" name="email" autocomplete="off" id="email-input"
-                     value="" />
+                  <input type="email" class="checkout-form-input" name="email" autocomplete="off" id="email-input" />
                   <small class="checkout-form-error" id="email-error"></small>
                </div>
                <div class="checkout-form-control">
                   <label for="name" class="checkout-form-label"> Contraseña * </label>
                   <input type="password" class="checkout-form-input" name="password1" autocomplete="off"
-                     id="password1-input" value="" />
+                     id="password1-input" />
                   <small class="checkout-form-error" id="password1-error"></small>
                </div>
                <div class="checkout-form-control">
                   <label for="name" class="checkout-form-label"> Repetir Contraseña * </label>
                   <input type="password" class="checkout-form-input" name="password2" autocomplete="off"
-                     id="password2-input" value="" />
+                     id="password2-input" />
                   <small class="checkout-form-error" id="password2-error"></small>
                </div>
             </section>
@@ -59,21 +57,20 @@
                   <div class="checkout-form-control">
                      <label for="name" class="checkout-form-label "> Dirección * </label>
                      <input type="text" class="checkout-form-input checkout-address-input" name="address"
-                        autocomplete="off" id="address-input" value="" />
+                        autocomplete="off" id="address-input" />
                      <small class="checkout-form-error" id="address-error"></small>
                   </div>
                   <div class="checkout-form-control">
                      <label for="name" class="checkout-form-label "> Dpto. * </label>
                      <input type="text" class="checkout-form-input checkout-dpto-input" name="dpto" autocomplete="off"
-                        id="dpto-input" value="" />
+                        id="dpto-input" />
                      <small class="checkout-form-error" id="dpto-error"></small>
                   </div>
                </section>
                <section class="checkout-form-section">
                   <div class="checkout-form-control">
                      <label for="name" class="checkout-form-label"> Provincia * </label>
-                     <select name="provincia" class="checkout-form-input checkout-form-select" id="provincia-select"
-                        value="">
+                     <select name="province" class="checkout-form-input checkout-form-select" id="province-select">
                         <option value=""> Seleccionar </option>
                         <option value="Buenos Aires">Buenos Aires</option>
                         <option value="Buenos Aires Capital"> Ciudad Autónoma de Buenos Aires </option>
@@ -100,27 +97,27 @@
                         <option value="Tierra del Fuego">Tierra del Fuego</option>
                         <option value="Tucuman">Tucuman</option>
                      </select>
-                     <small class="checkout-form-error" id="provincia-error"></small>
+                     <small class="checkout-form-error" id="province-error"></small>
                   </div>
                   <div class="checkout-form-control">
                      <label for="name" class="checkout-form-label"> Localidad * </label>
-                     <input type="text" class="checkout-form-input" name="localidad" autocomplete="off"
-                        id="localidad-input" value="" />
-                     <small class="checkout-form-error" id="localidad-error"></small>
+                     <input type="text" class="checkout-form-input" name="locality" autocomplete="off"
+                        id="locality-input" />
+                     <small class="checkout-form-error" id="locality-error"></small>
                   </div>
                </section>
                <section class="checkout-form-section">
                   <div class="checkout-form-control">
                      <label for="name" class="checkout-form-label"> Codigo Postal * </label>
-                     <input type="text" class="checkout-form-input checkout-dpto-input" name="cp" autocomplete="off"
-                        id="cp-input" value="" />
-                     <small class="checkout-form-error" id="cp-error"></small>
+                     <input type="text" class="checkout-form-input checkout-dpto-input" name="zip" autocomplete="off"
+                        id="zip-input" />
+                     <small class="checkout-form-error" id="zip-error"></small>
                   </div>
                   <div class="checkout-form-control">
-                     <label for="name" class="checkout-form-label"> Número de Teléfono * </label>
-                     <input type="text" class="checkout-form-input checkout-address-input" name="telefono"
-                        autocomplete="off" id="telefono-input" value="" />
-                     <small class="checkout-form-error" id="telefono-error"></small>
+                     <label for="phone" class="checkout-form-label"> Número de Teléfono * </label>
+                     <input type="text" class="checkout-form-input checkout-address-input" name="phone"
+                        autocomplete="off" id="phone-input" />
+                     <small class="checkout-form-error" id="phone-error"></small>
                   </div>
                </section>
             </section>
@@ -128,13 +125,12 @@
                <p class="signup-form-error"> Revisar los campos incorrectos. </p>
             </div>
             <div class="signup-button-container">
-
-               <button class="btnGradientOrange signup-form-button"> Sign Up </button>
+               <button type="submit" class="btnGradientOrange signup-form-button"> Sign Up </button>
                <a href="login.html" class="login-form-create-account"> Ya tengo una cuenta </a>
             </div>
          </section>
       </form>
-   </section>
+   </div>
 </body>
 
 </html>
