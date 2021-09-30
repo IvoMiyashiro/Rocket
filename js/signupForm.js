@@ -111,7 +111,6 @@ document.addEventListener('DOMContentLoaded', () => {
          for (let i = 0; i < inputForm.length; i++) {
             formValues[inputForm[i].name] = inputForm[i].value;
          };
-         console.log(JSON.stringify(formValues))
          postRequest(JSON.stringify(formValues));
       } else {
          document.querySelector('.signup-form-error-container').style.display = 'block';
@@ -137,7 +136,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       xhr.onload = function () {
          if (this.status == 200) {
-            window.location.href = 'login.html';
+            window.location.href = 'login.php';
          }
       }
 

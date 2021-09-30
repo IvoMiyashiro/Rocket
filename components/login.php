@@ -1,23 +1,8 @@
-<?php
-
-?>
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-   <meta charset="UTF-8">
-   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <link rel="stylesheet" href="../css/styles.css">
-   <script type="text/javascript" src="../js/loginForm.js"></script>
-   <title> Login | Rocket </title>
-</head>
-
 <body>
    <div class="login-form-section">
       <img src="../assets/images/backgroung.jpg" alt="gradient" class="login-background">
       <div class="login-form-container">
-         <form action="/" class="login-form">
+         <form class="login-form">
             <a href="index.html">
                <svg class="logo-icon login-logo-icon" aria-hidden="true" focusable="false" data-prefix="fas"
                   data-icon="rocket" class="svg-inline--fa fa-rocket fa-w-16" role="img"
@@ -31,8 +16,7 @@
             <section class="login-form-input-section">
                <div class="login-form-control">
                   <label for="email" class="login-form-label"> Email </label>
-                  <input type="email" name="email" autocomplete="off" class="login-form-input"
-                     id="login-form-input-email" />
+                  <input type="email" name="email" autocomplete="off" class="login-form-input" id="login-form-input-email" />
                </div>
                <div class="login-form-control">
                   <label for="password" class="login-form-label"> Contraseña </label>
@@ -47,10 +31,8 @@
                Recordarme
             </label>
             <a href="signup.html" class="login-form-create-account"> Crear una cuenta nueva </a>
-            <button class="login-form-button btnGradientOrange"> Login </button>
+            <button type="submit" name="submit" class="login-form-button btnGradientOrange"> Login </button>
          </form>
       </div>
    </div>
 </body>
-
-</html>

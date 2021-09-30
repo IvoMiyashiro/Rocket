@@ -1,22 +1,22 @@
 <?php
 
-   function databaseConn() {
-      $server = 'localhost';
-      $username = 'root';
-      $password = '';
-      $database = 'rocket';
-   
-      $conn = new mysqli($server, $username, $password, $database);
-   
-      if ($conn -> connect_error) {
-         die("Connection failed: " . $conn -> connect_error);
-      }
+function databaseConn() {
+   $server = 'localhost';
+   $username = 'root';
+   $password = '';
+   $database = 'rocket';
 
-      return $conn;
+   $conn = new mysqli($server, $username, $password, $database);
+
+   if ($conn -> connect_error) {
+      die("Connection failed: " . $conn -> connect_error);
    }
 
-   function databaseDis($conn) {
-      $conn -> close();
-   }
+   return $conn;
+}
+
+function databaseDis($conn) {
+   $conn -> close();
+}
    
 ?>
