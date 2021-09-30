@@ -125,7 +125,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
    function postRequest(values) {
       xhr = new XMLHttpRequest();
-      xhr.open('POST', '../services/signup.php', true);
+      xhr.open('POST', '../../services/signup.php', true);
       xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
 
       xhr.onprogress = function () {
@@ -136,7 +136,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       xhr.onload = function () {
          if (this.status == 200) {
-            window.location.href = 'login.php';
+            window.location.href = '../login';
          }
       }
 

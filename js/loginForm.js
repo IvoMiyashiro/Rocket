@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
    function postRequest(values) {
       xhr = new XMLHttpRequest();
-      xhr.open('POST', '../services/login.php', true);
+      xhr.open('POST', '../../services/login.php', true);
       xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
 
       xhr.onprogress = function () {
@@ -39,7 +39,12 @@ document.addEventListener('DOMContentLoaded', () => {
             } else {
                loginFormError.style.display = 'block';
                document.querySelector('.login-form-button').innerText = `LOGIN `;
+               console.log(this.responseText);
             }
+         } else if (this.status == 404) {
+            loginFormError.style.display = 'block';
+            document.querySelector('.login-form-button').innerText = `LOGIN `;
+            console.log(this.responseText);
          }
       }
 
