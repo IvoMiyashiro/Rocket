@@ -8,6 +8,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const image = document.querySelectorAll('.create-pub-img-container');
     const img = document.querySelectorAll('.create-pub-img');
     const removeImg = document.querySelectorAll('.create-pub-delete-img');
+    const retiroTienda = document.querySelector('#retiro-tienda');
+    const enviosGratis = document.querySelector('#envios-gratis');
 
     regEx = {
         titulo: /^[A-Za-zÀ-ÿ0-9\s\-_,\.;:()|]{5,40}$/,
@@ -92,6 +94,7 @@ document.addEventListener('DOMContentLoaded', () => {
                             const result = reader.result;
                             img[i].src = result;
                             image[i].style.display = 'block';
+                            console.log(result)
                         });
 
                         removeImg[i].addEventListener('click', function() {
@@ -110,15 +113,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
     signupForm.addEventListener('submit', (e) => {
         e.preventDefault();
-        console.log(formErrors)
+
         if ( formErrors.titulo && formErrors.marca && formErrors.categoria && formErrors.color && formErrors.desc ) {
-            document.querySelector('.signup-form-error-container').style.display = 'none';
-            document.querySelector('.create-pub-form-button').innerHTML = `<div class="spinner"></div>`
-            document.querySelector('.create-pub-form-button').disabled = true
-            setTimeout( async() => {
-                signupForm.reset();
-                window.location.href = "dashboard-pubs.html"
-            }, 3000);
+            let formValues = {};
+            for (let i = 0; i < inputForm.length; i++) {
+               formValues[inputForm[i].name] = inputForm[i].value;
+            };
+
+            const newForm = { ...formValues, 'free-delivery': enviosGratis.value  , 'shop-pickup': retiroTienda.value };
+            // postRequest(JSON.stringify(formValues));
+            console.log(JSON.stringify(newForm));
         } else {
             document.querySelector('.signup-form-error-container').style.display = 'block';
         }
@@ -129,5 +133,25 @@ document.addEventListener('DOMContentLoaded', () => {
         input.addEventListener('blur', handleFormValidation);
         input.addEventListener('change', handleFormValidation);
     });
+
+    function postRequest(values) {
+        xhr = new XMLHttpRequest();
+        xhr.open('POST', '../../services/signup.php', true);
+        xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+  
+        xhr.onprogress = function () {
+            document.querySelector('.signup-form-error-container').style.display = 'none';
+            document.querySelector('.create-pub-form-button').innerHTML = `<div class="spinner"></div>`
+            document.querySelector('.create-pub-form-button').disabled = true
+        }
+  
+        xhr.onload = function () {
+           if (this.status == 200) {
+              window.location.href = '../posts';
+           }
+        }
+  
+        xhr.send("values=" + values);
+     }
 
 });
