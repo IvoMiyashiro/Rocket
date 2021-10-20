@@ -15,6 +15,7 @@ $pageScripts = array('../../js/dashboard-nav.js', '../../js/dashboard-create-pub
 <html lang="en">
 
 <?php include_once '../../components/head.php'; ?>
-<?php include_once '../../components/create-post.php'; ?>
+<?php include_once '../../components/create-post.php';?>
+
 
 </html>

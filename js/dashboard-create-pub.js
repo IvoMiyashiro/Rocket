@@ -1,157 +1,169 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    const signupForm = document.querySelector('.signup-form');
-    const inputForm = document.querySelectorAll('.checkout-form-input');
-    const imageContainer = document.querySelectorAll('.dashboard-create-pub-img');
-    const inputImage = document.querySelectorAll('.dashboard-create-pub-input-img');
-    const selectImgBtn = document.querySelectorAll('.select-img-button');
-    const image = document.querySelectorAll('.create-pub-img-container');
-    const img = document.querySelectorAll('.create-pub-img');
-    const removeImg = document.querySelectorAll('.create-pub-delete-img');
-    const retiroTienda = document.querySelector('#retiro-tienda');
-    const enviosGratis = document.querySelector('#envios-gratis');
+   const signupForm = document.querySelector('.signup-form');
+   const inputForm = document.querySelectorAll('.checkout-form-input');
+   const imageContainer = document.querySelectorAll('.dashboard-create-pub-img');
+   const inputImage = document.querySelectorAll('.dashboard-create-pub-input-img');
+   const selectImgBtn = document.querySelectorAll('.select-img-button');
+   const image = document.querySelectorAll('.create-pub-img-container');
+   const img = document.querySelectorAll('.create-pub-img');
+   const removeImg = document.querySelectorAll('.create-pub-delete-img');
+   const retiroTienda = document.querySelector('#retiro-tienda');
+   const enviosGratis = document.querySelector('#envios-gratis');
 
-    regEx = {
-        titulo: /^[A-Za-zÀ-ÿ0-9\s\-_,\.;:()|]{5,40}$/,
-        desc: /^[A-Za-zÀ-ÿ0-9\s\-_,\.;:()|]{10,200}$/,
-    };
+   regEx = {
+      titulo: /^[A-Za-zÀ-ÿ0-9\s\-_,\.;:()|]{5,40}$/,
+      desc: /^[A-Za-zÀ-ÿ0-9\s\-_,\.;:()|]{10,200}$/,
+   };
 
-    const formErrors = {
-        titulo: false,
-        marca: false,
-        categoria: false,
-        color: false,
-        desc: false,
-    };
+   const formErrors = {
+      titulo: false,
+      marca: false,
+      categoria: false,
+      color: false,
+      desc: false,
+   };
 
-    const validExtensions = ['jpg', 'jpeg', 'png'];
+   const validExtensions = ['jpg', 'jpeg', 'png'];
 
-    const handleFormValidation = ( e ) => {
-        const input = e.target;
-        switch ( input.name ) {
-            case 'titulo':
-                inputValidation( regEx.titulo, input.name, input.value, '*El título no es válido.');
-                break;
-            case 'desc':
-                inputValidation( regEx.desc, input.name, input.value, '*La descripción no es válida.');
-                break;
-            case 'categoria':
-                selectValidation( input.name, input.value, '*Selecciona una categoría.');
-                break;
-            case 'color':
-                selectValidation( input.name, input.value, '*Selecciona un color.');
-                break;
-            case 'marca':
-                selectValidation( input.name, input.value, '*Selecciona una marca.');
-                break;
-            default:
-                return;
-        }
-    }
+   const handleFormValidation = (e) => {
+      const input = e.target;
+      switch (input.name) {
+         case 'titulo':
+            inputValidation(regEx.titulo, input.name, input.value, '*El título no es válido.');
+            break;
+         case 'desc':
+            inputValidation(regEx.desc, input.name, input.value, '*La descripción no es válida.');
+            break;
+         case 'categoria':
+            selectValidation(input.name, input.value, '*Selecciona una categoría.');
+            break;
+         case 'color':
+            selectValidation(input.name, input.value, '*Selecciona un color.');
+            break;
+         case 'marca':
+            selectValidation(input.name, input.value, '*Selecciona una marca.');
+            break;
+         default:
+            return;
+      }
+   }
 
-    const inputValidation = ( regEx, inputName, inputValue, message ) => {
-        if ( regEx.test( inputValue ) ) {
-            document.getElementById(`${ inputName }-error`).innerText = '';
-            document.getElementById(`${ inputName }-input`).classList.remove( 'checkout-input-error' );
-            formErrors[ inputName ] = true;
-        } else {
-            document.getElementById(`${ inputName }-error`).innerText = message;
-            document.getElementById(`${ inputName }-input`).classList.add( 'checkout-input-error' );
-            formErrors[ inputName ] = false;
-        }
-    }
+   const inputValidation = (regEx, inputName, inputValue, message) => {
+      if (regEx.test(inputValue)) {
+         document.getElementById(`${inputName}-error`).innerText = '';
+         document.getElementById(`${inputName}-input`).classList.remove('checkout-input-error');
+         formErrors[inputName] = true;
+      } else {
+         document.getElementById(`${inputName}-error`).innerText = message;
+         document.getElementById(`${inputName}-input`).classList.add('checkout-input-error');
+         formErrors[inputName] = false;
+      }
+   }
 
-    const selectValidation = ( inputName, value, message ) => {
-        if ( value !== "" ) {
-            document.getElementById(`${ inputName }-error`).innerText = '';
-            document.getElementById(`${ inputName }-select`).classList.remove( 'checkout-input-error' );
-            formErrors[ inputName ] = true;
-        } else {
-            document.getElementById(`${ inputName }-select`).classList.add( 'checkout-input-error' );
-            document.getElementById(`${ inputName }-error`).innerText = message;
-            formErrors[ inputName ] = false;
-        }
-    }
+   const selectValidation = (inputName, value, message) => {
+      if (value !== "") {
+         document.getElementById(`${inputName}-error`).innerText = '';
+         document.getElementById(`${inputName}-select`).classList.remove('checkout-input-error');
+         formErrors[inputName] = true;
+      } else {
+         document.getElementById(`${inputName}-select`).classList.add('checkout-input-error');
+         document.getElementById(`${inputName}-error`).innerText = message;
+         formErrors[inputName] = false;
+      }
+   }
 
-    for ( let i = 0; i < selectImgBtn.length; i++ ) {
-        selectImgBtn[i].addEventListener('click', () => {
-            inputImage[i].click();
-            inputImage[i].addEventListener('change', function(e) {
-                const file = this.files[0];
-                const fileExtension = e.target.value.split('.');
+   for (let i = 0; i < selectImgBtn.length; i++) {
+      selectImgBtn[i].addEventListener('click', () => {
+         inputImage[i].click();
+         inputImage[i].addEventListener('change', function (e) {
+            const file = this.files[0];
+            const fileExtension = e.target.value.split('.');
 
-                if ( file ) {
-                    if ( !validExtensions.includes( fileExtension[1] )) {
-                        document.getElementById(`img-error`).innerText = '*Archivo/s no válido/s.';
-                        imageContainer[i].classList.add( 'checkout-input-error' );
-                        formErrors[ inputName ] = true;
-                    } else {
-                        document.getElementById(`img-error`).innerText = '';
-                        imageContainer[i].classList.remove( 'checkout-input-error' );
+            if (file) {
+               if (!validExtensions.includes(fileExtension[1])) {
+                  document.getElementById(`img-error`).innerText = '*Archivo/s no válido/s.';
+                  imageContainer[i].classList.add('checkout-input-error');
+                  formErrors[inputName] = true;
+               } else {
+                  document.getElementById(`img-error`).innerText = '';
+                  imageContainer[i].classList.remove('checkout-input-error');
 
-                        const reader = new FileReader();
-                        reader.addEventListener('load', function() {
-                            const result = reader.result;
-                            img[i].src = result;
-                            image[i].style.display = 'block';
-                            console.log(result)
-                        });
+                  const reader = new FileReader();
+                  reader.addEventListener('load', function () {
+                     const result = reader.result;
+                     img[i].src = result;
+                     image[i].style.display = 'block';
+                  });
 
-                        removeImg[i].addEventListener('click', function() {
-                            img[i].src = "";
-                            image[i].style.display = 'none';
-                        });
+                  removeImg[i].addEventListener('click', function () {
+                     img[i].src = "";
+                     image[i].style.display = 'none';
+                  });
 
-                        reader.readAsDataURL(file);
-                        formErrors[ img ] = true;
-                    }
-                }
+                  reader.readAsDataURL(file);
+                  formErrors[img] = true;
+               }
+            }
 
-            });
-        });
-    };
+         });
+      });
+   };
 
-    signupForm.addEventListener('submit', (e) => {
-        e.preventDefault();
+   signupForm.addEventListener('submit', (e) => {
+      e.preventDefault();
 
-        if ( formErrors.titulo && formErrors.marca && formErrors.categoria && formErrors.color && formErrors.desc ) {
-            let formValues = {};
-            for (let i = 0; i < inputForm.length; i++) {
-               formValues[inputForm[i].name] = inputForm[i].value;
-            };
+      if (formErrors.titulo && formErrors.marca && formErrors.categoria && formErrors.color && formErrors.desc) {
+         let formValues = {};
+         for (let i = 0; i < inputForm.length; i++) {
+            formValues[inputForm[i].name] = inputForm[i].value;
+         };
 
-            const newForm = { ...formValues, 'free-delivery': enviosGratis.value  , 'shop-pickup': retiroTienda.value };
-            // postRequest(JSON.stringify(formValues));
-            console.log(JSON.stringify(newForm));
-        } else {
-            document.querySelector('.signup-form-error-container').style.display = 'block';
-        }
-    });
+         if (enviosGratis.checked === true) {
+            enviosGratis.value = true;
+         } else {
+            enviosGratis.value = false;
+         }
 
-    inputForm.forEach(( input ) => {
-        input.addEventListener('keyup', handleFormValidation);
-        input.addEventListener('blur', handleFormValidation);
-        input.addEventListener('change', handleFormValidation);
-    });
+         if (retiroTienda.checked === true) {
+            retiroTienda.value = true;
+         } else {
+            retiroTienda.value = false;
+         }
 
-    function postRequest(values) {
-        xhr = new XMLHttpRequest();
-        xhr.open('POST', '../../services/signup.php', true);
-        xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-  
-        xhr.onprogress = function () {
-            document.querySelector('.signup-form-error-container').style.display = 'none';
-            document.querySelector('.create-pub-form-button').innerHTML = `<div class="spinner"></div>`
-            document.querySelector('.create-pub-form-button').disabled = true
-        }
-  
-        xhr.onload = function () {
-           if (this.status == 200) {
-              window.location.href = '../posts';
-           }
-        }
-  
-        xhr.send("values=" + values);
-     }
+         const newForm = { ...formValues, 'free-delivery': enviosGratis.value, 'shop-pickup': retiroTienda.value };
+         postRequest(JSON.stringify(newForm));
+         // console.log(JSON.stringify(newForm));
+      } else {
+         document.querySelector('.signup-form-error-container').style.display = 'block';
+      }
+   });
+
+   inputForm.forEach((input) => {
+      input.addEventListener('keyup', handleFormValidation);
+      input.addEventListener('blur', handleFormValidation);
+      input.addEventListener('change', handleFormValidation);
+   });
+
+   function postRequest(values) {
+      xhr = new XMLHttpRequest();
+      xhr.open('POST', '../../services/create-post.php', true);
+      xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+
+      xhr.onprogress = function () {
+         document.querySelector('.signup-form-error-container').style.display = 'none';
+         document.querySelector('.create-pub-form-button').innerHTML = `<div class="spinner"></div>`
+         document.querySelector('.create-pub-form-button').disabled = true
+      }
+
+      xhr.onload = function () {
+         console.log(this.responseText);
+         // if (this.status == 200) {
+         //    window.location.href = '../posts';
+         // }
+      }
+
+      xhr.send("values=" + values);
+   }
 
 });

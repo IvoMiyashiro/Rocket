@@ -4,7 +4,7 @@
 
 if (isset($_POST['values'])) {
    $request = json_decode($_POST['values']);
-   echo 'hola';
+   
    $name = $request->{'name'};
    $email = $request->{'email'};
    $password = $request->{'password1'};
